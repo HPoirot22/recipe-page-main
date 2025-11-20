@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900; /* Faixa de pesos para a fonte variável */
+    font-style: normal;
+}
+
+:root {
+    /* Colors */
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%); /* Background Color */
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%); /* Body Text Color */
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%); /* Headings Color */
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%); /* Preparation Time BG */
+
+    /* Typography */
+    --font-family-serif: 'Young Serif', serif;
+    --font-family-sans: 'Outfit', sans-serif;
+    --font-size-base: 16px;
+
+    /* Spacing */
+    --spacing-unit: 8px;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    background-color: var(--stone-100);
+    color: var(--stone-600);
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body h2 {
+    font-family: var(--font-family-serif);
+    color: var(--brown-800);
+}
+
+.recipe-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 4);
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-intro{
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    text-align: left;
+}
+
+.recipe-intro h1 {
+    font-family: var(--font-family-serif);
+    font-size: 2.5em;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+img{
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.preparation-time {
+    max-width: 600px;
+    margin: 0; 
+    padding: calc(var(--spacing-unit) * 2);
+    background-color: var(--rose-50);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-details h3 {
+    margin: calc(var(--spacing-unit) * 1.25);
+    color: var(--rose-800);
+    font-weight: bold;
+}
+
+.ingredients {
+    margin-top: calc(var(--spacing-unit) * 2);
+    border-bottom: 1px solid #eee; /* Linha divisória suave */
+}
+
+.ingredients li{
+    padding: calc(var(--spacing-unit) * 0.625);
+}
+
+.instructions {
+    margin-top: calc(var(--spacing-unit) * 2);
+    border-bottom: 1px solid #eee; /* Linha divisória suave */
+}
+
+.instructions li {
+    padding: 4px 0;
+    padding-left: 12px;
+}
+
+.instructions li::marker {
+    color: var(--brown-800);
+    font-weight: bold; /* Opcional: Deixa o número em negrito */
+    font-size: 1.1em; /* Opcional: Aumenta o tamanho do número */
+    
+}
+
+.nutritional-info {
+    margin-top: calc(var(--spacing-unit) * 2);    
+}
+
+.nutrition-table {
+    /* Garante que a tabela use o espaço disponível */
+    width: 50%; 
+    /* Colapsa as bordas para evitar linhas duplas */
+    border-collapse: collapse; 
+    /* Remove o espaçamento padrão entre as células */
+    border-spacing: 0;
+    /* Define a fonte se for diferente do corpo do texto */
+    font-size: 1em;
+}
+
+/* Estiliza cada célula */
+.nutrition-table td {
+    padding: 4px 0; /* Espaçamento interno (topo/fundo 10px, lados 0) */
+    border-bottom: 1px solid #eee; /* Linha divisória suave */
+}
+
+.categories {
+    font-weight: bold;
+    font-size: 1.1em; /* Você pode ajustar este valor */
+}
+.numbers{
+    text-align: right;
+    font-weight: bold;
+    color: var(--brown-800);
+}
+
+/* 7. Estilo da Atribuição (Footer) */
+.attribution {
+    /* Fixa o footer na viewport */
+    /* Sem position: fixed! */
+    margin-top: auto; /* Empurra o rodapé para o final do contêiner flex (body) */
+    flex-shrink: 0; /* Garante que o footer não encolha */
+    padding: calc(var(--spacing-unit) * 2);
+    text-align: center;
+}
+
+/* Media Query para Responsividade Móvel */
+@media (max-width: 600px) {
+    body {
+        padding: 0; /* Remove o padding do corpo em telas pequenas */
+    }
+
+    .recipe-container {
+        padding: calc(var(--spacing-unit) * 2); /* Reduz o padding interno do container */
+        border-radius: 0; /* Remove a borda arredondada para ocupar a tela toda */
+        box-shadow: none; /* Remove a sombra */
+    }
+
+    .recipe-intro h1 {
+        font-size: 2em; /* Reduz o tamanho do título principal */
+    }
+
+    .nutrition-table {
+        width: 100%; /* Tabela ocupa toda a largura disponível */
+    }
+
+    img {
+        border-radius: 0; /* Imagem sem bordas arredondadas para um visual de ponta a ponta */
+    }
+}
