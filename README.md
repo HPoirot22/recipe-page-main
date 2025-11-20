@@ -18,10 +18,6 @@ O desafio consiste em construir uma página de receita estática e responsiva, r
 - Flexbox para layout
 - Design Responsivo (Mobile-First)
 
-### What I learned
-
-Use esta seção para recapitular alguns dos seus principais aprendizados durante o projeto. É uma ótima maneira de reforçar seu conhecimento.
-
 ## Author
 
 - Website - Victória Nascimento
