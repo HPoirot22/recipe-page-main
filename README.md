@@ -9,7 +9,7 @@ O desafio consiste em construir uma página de receita estática e responsiva, r
 
 ### Link
 
-- URL do Site ao Vivo: Adicione o URL do site ao vivo aqui
+- URL do Site ao Vivo: https://hpoirot22.github.io/recipe-page-main/
 
 ### Built with
 
